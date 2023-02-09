@@ -1,2 +1,3 @@
-import { ThemeSwither } from "./ui/ThemeSwither";
-export {ThemeSwither}
+import { ThemeSwither } from './ui/ThemeSwither';
+
+export { ThemeSwither };
