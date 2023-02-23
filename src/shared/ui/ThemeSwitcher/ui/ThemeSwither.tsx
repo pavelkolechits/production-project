@@ -12,7 +12,7 @@ export const ThemeSwither = ({ className }: ThemeSwitherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <Button
-            className={classNames( '', {}, [className])}
+            className={classNames('', {}, [className])}
             onClick={toggleTheme}
         >
             {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />}
