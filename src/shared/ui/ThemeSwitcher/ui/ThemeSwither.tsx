@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTheme, Theme } from 'app/providers/ThemeProvider';
 import { Button } from 'shared/ui/Button/Button';
-import LightIcon from '../../../assets/icons/theme-light.svg';
-import DarkIcon from '../../../assets/icons/theme-dark.svg';
+import LightIcon from '../../../assets/icons/themeLight.svg';
+import DarkIcon from '../../../assets/icons/themeDark.svg';
 
 interface ThemeSwitherProps {
   className?: string;
