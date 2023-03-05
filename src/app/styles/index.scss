@@ -3,12 +3,23 @@
 @import "./themes/normal";
 @import "./themes/dark";
 
-.app {
+// .app {
+//     font-size: var(--font-m);
+//     background: var(--bg-color);
+//     min-height: 100vh;
+//     color: var(--primary-color);
+//     font-family: var(--font-family-main);
+// }
+.app,
+.app_modal {
     font-size: var(--font-m);
-    background: var(--bg-color);
     color: var(--primary-color);
-    min-height: 100vh;
     font-family: var(--font-family-main);
+}
+
+.app {
+    background: var(--bg-color);
+    min-height: 100vh;
 }
 
 .content-page {
