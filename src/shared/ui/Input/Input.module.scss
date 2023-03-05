@@ -1,0 +1,17 @@
+.InputWrap {
+    display: flex;
+}
+
+.inpup {
+    border: 1px solid var(--primary-color);
+    outline: none;
+    background-color: inherit;
+    color: var(--primary-color);
+    width: 70%;
+    padding: 5px;
+}
+
+.placeholder {
+    margin-right: 5px;
+    width: 30%;
+}

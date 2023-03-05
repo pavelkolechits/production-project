@@ -21,7 +21,7 @@ module.exports = {
     rules: {
         'max-len': ['error', {
             comments: 300,
-            code: 100,
+            code: 120,
         }],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -51,6 +51,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-plusplus': 'off',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
