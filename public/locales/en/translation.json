@@ -4,5 +4,8 @@
     "Страница не найдена" : "Page not found",
     "Главная": "Main",
     "О сайте": "About",
-    "Войти": "Sign in"
+    "Войти": "Sign in",
+    "Выйти": "Sign out",
+    "Введите имя пользователя": "Enter username",
+    "Введите пароль": "Enter password"
 }
