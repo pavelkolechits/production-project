@@ -32,7 +32,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <Button theme={ThemeButton.BACKGROUND_INVERTED} onClick={onLogout}>
                     {t('Выйти')}
                 </Button>
-                <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
+                {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
             </div>
         );
     }
@@ -41,7 +41,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button theme={ThemeButton.BACKGROUND_INVERTED} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
-            <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
+            {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
         </div>
     );
 };
