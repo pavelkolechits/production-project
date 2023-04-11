@@ -26,7 +26,7 @@
     }
   ],
   "profile": {
-    "first": "Тимур",
+    "firstname": "Тимур",
     "lastname": "Ульби",
     "age": 22,
     "currency": "RUB",
