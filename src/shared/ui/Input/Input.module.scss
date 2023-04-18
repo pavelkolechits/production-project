@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.inpup {
+.input {
     border: 1px solid var(--primary-color);
     outline: none;
     background-color: inherit;
@@ -14,4 +14,8 @@
 .placeholder {
     margin-right: 5px;
     width: 30%;
+}
+
+.readonly {
+    opacity: 0.7;
 }

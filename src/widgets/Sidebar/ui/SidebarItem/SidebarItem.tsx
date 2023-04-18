@@ -6,15 +6,21 @@ import MainIcon from 'shared/assets/icons/mainIcon.svg';
 import AboutIcon from 'shared/assets/icons/aboutIcon.svg';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
 import { memo } from 'react';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
     item: SidebarItemType;
-    collapsed: boolean
+    collapsed: boolean;
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
+    const isAuth = useSelector(getUserAuthData);
+    if (!isAuth && item.authOnly) {
+        return null;
+    }
     return (
         <div className={classNames(cls.SidebarItem, { [cls.collapsed]: collapsed }, [])}>
             <AppLink

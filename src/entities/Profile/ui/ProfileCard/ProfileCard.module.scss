@@ -1,19 +1,30 @@
 .ProfileCard {
     margin: auto;
-}
-
-.header {
-    display: flex;
-}
-
-.editBtn {
-    margin-left: auto;
-}
-
-.data {
-    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .input {
     margin-top: 10px;
+}
+
+.loading {
+    margin: 300px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    font-style: red;
+}
+
+.avatarWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.editing {
+    border: 1px solid var(--inverted-primary-color);
 }
