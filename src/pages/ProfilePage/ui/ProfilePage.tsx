@@ -20,6 +20,8 @@ import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDi
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Curency';
 import { Country } from 'entities/Country';
+import { useParams } from 'react-router-dom';
+import { getUserAuthData } from 'entities/User';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -37,12 +39,14 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
-
+    const { id } = useParams<{id: string}>();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback(
         (value?: string) => {

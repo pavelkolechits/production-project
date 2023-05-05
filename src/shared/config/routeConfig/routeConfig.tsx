@@ -2,7 +2,7 @@ import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { RouteProps } from 'react-router-dom';
 import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePageAsync } from 'pages/ProfilePage';
+import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlePage } from 'pages/ArticlePage';
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 
@@ -23,7 +23,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
     [AppRoutes.NOT_FOUND]: '*',
-    [AppRoutes.PROFILE]: '/profile',
+    [AppRoutes.PROFILE]: '/profile/',
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
 };
@@ -42,8 +42,8 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         element: <NotFoundPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: RoutePath.profile,
-        element: <ProfilePageAsync />,
+        path: `${RoutePath.profile}:id`,
+        element: <ProfilePage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLES]: {
