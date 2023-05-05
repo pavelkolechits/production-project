@@ -47,6 +47,12 @@
       "text": "jjj",
       "articleId": "1",
       "id": "GxBemKu"
+    },
+    {
+      "userId": "2",
+      "text": "33333",
+      "articleId": "1",
+      "id": "Yb8Jcol"
     }
   ],
   "users": [
@@ -62,7 +68,7 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     }
   ],
   "articles": [
