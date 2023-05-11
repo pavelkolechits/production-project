@@ -33,11 +33,12 @@ export const ArticlleListItem = (props: ArticlleListItemProps) => {
         // eslint-disable-next-line prefer-const
         let textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
         return (
-            <div className={classNames(cls.ArticlleListItem, {}, [className])}>
+            <div className={classNames(cls.ArticlleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
-                        <Avatar alt="/" size={30} src={article.user.id} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Avatar alt="/" size={30} src={article?.user?.avatar} />
+                        <Text text={article?.user?.username} className={cls.username} />
+                        {console.log(article?.user?.avatar)}
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text title={article.title} className={cls.title} />
@@ -54,7 +55,7 @@ export const ArticlleListItem = (props: ArticlleListItemProps) => {
         );
     }
     return (
-        <div className={classNames(cls.ArticlleListItem, {}, [className])}>
+        <div className={classNames(cls.ArticlleListItem, {}, [className, cls[view]])}>
             <Card onClick={onOpenArticle} className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img className={cls.img} src={article.img} alt={article.title} />
