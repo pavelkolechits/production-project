@@ -21,20 +21,14 @@ export const ArticleList = (props: ArticleListProps) => {
             // eslint-disable-next-line react/no-array-index-key
             <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
         ));
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
+
     const renderArticle = (article: Article) => {
-        console.log(article);
         return <ArticlleListItem article={article} view={view} key={article.id} />;
     };
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };
