@@ -41,7 +41,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeAge,
         onChangeCity,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     const mods: Mods = {
         [cls.editing]: !readonly,
@@ -83,7 +83,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 />
                 <Input
                     className={cls.input}
-                    placeholder={t('Ваше фамилия')}
+                    placeholder={t('Ваша фамилия')}
                     value={data?.lastname}
                     onChange={onChangeLastname}
                     readonly={readonly}
@@ -97,26 +97,26 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 />
                 <Input
                     className={cls.input}
-                    placeholder={t('Ваш город')}
+                    placeholder={t('Город')}
                     value={data?.city}
                     onChange={onChangeCity}
                     readonly={readonly}
                 />
                 <CurrencySelect
-                    className={cls.input}
+                    className={cls.currency}
                     readonly={readonly}
                     onChange={onChangeCurrency}
-                    value={data?.currency}
+                    value={t(data?.currency as string)}
                 />
                 <CountrySelect
-                    className={cls.input}
+                    className={cls.country}
                     readonly={readonly}
                     onChange={onChangeCountry}
-                    value={data?.country}
+                    value={t(data?.country as string)}
                 />
                 <Input
                     className={cls.input}
-                    placeholder={t('Ссылка на аватар')}
+                    placeholder={t('Введите ссылку на аватар')}
                     value={data?.avatar}
                     onChange={onChangeAvatar}
                     readonly={readonly}

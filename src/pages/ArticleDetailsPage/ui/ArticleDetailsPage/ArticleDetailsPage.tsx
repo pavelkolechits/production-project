@@ -26,6 +26,7 @@ import { AddNewComment } from 'features/AddNewComment';
 import {
     addCommentForArticle,
 } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -51,19 +52,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }, [dispatch]);
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t('Статья не найдена')}
-            </div>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <Text title={t('Статья не найдена')} />
+            </Page>
         );
     }
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text title={t('Комментарий')} />
                 <AddNewComment onSendComment={onSendComment} />
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -1,4 +1,6 @@
 .BIG {
+    margin: 10px;
+
     .views {
         margin-left: auto;
     }
@@ -43,6 +45,7 @@
     width: 230px;
     transition: 0.2s;
     cursor: pointer;
+    margin: 10px;
 
     .date {
         position: absolute;

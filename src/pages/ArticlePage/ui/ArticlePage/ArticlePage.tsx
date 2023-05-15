@@ -10,9 +10,11 @@ import { memo, useCallback, useEffect } from 'react';
 import { fetchArticleList } from 'pages/ArticlePage/model/services/fetchArticleList';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
+import { initArticlePage } from 'pages/ArticlePage/model/services/initArticlePage';
 import {
     getArticlePageError,
     getArticlePageHasMore,
+    getArticlePageInited,
     getArticlePageIsLoading,
     getArticlePageNum,
     getArticlePageView,
@@ -33,16 +35,14 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageIsLoading);
     const view = useSelector(getArticlePageView);
+    const inited = useSelector(getArticlePageInited);
     const onViewClick = useCallback((view: ArticleView) => {
         dispatch(articlePageAction.setView(view));
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch(articlePageAction.initState());
-        dispatch(fetchArticleList({
-            page: 1,
-        }));
-    }, [dispatch]);
+        dispatch(initArticlePage);
+    }, [dispatch, inited]);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage());

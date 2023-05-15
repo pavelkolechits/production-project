@@ -22,6 +22,7 @@ import { Currency } from 'entities/Curency';
 import { Country } from 'entities/Country';
 import { useParams } from 'react-router-dom';
 import { getUserAuthData } from 'entities/User';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -87,7 +88,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
     );
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 <ProfileCard
                     data={formData}
@@ -101,7 +102,7 @@ export const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -1,4 +1,7 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
 import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticlleListItem } from '../ArticleListItem/ArticlleListItem';
@@ -12,6 +15,8 @@ interface ArticleListProps {
 }
 
 export const ArticleList = (props: ArticleListProps) => {
+    const navigate = useNavigate();
+    const { t } = useTranslation();
     const {
         className, articles, isLoading, view = ArticleView.BIG,
     } = props;

@@ -15,7 +15,7 @@ interface ProfilePageHeaderProps {
 }
 
 export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
@@ -41,16 +41,28 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 && (
                     <div className={cls.btnsWrap}>
                         {readonly ? (
-                            <Button onClick={onEdit} className={cls.editBtn} theme={ThemeButton.OUTLINE}>
-                                {t('редактировать')}
+                            <Button
+                                onClick={onEdit}
+                                className={cls.editBtn}
+                                theme={ThemeButton.OUTLINE}
+                            >
+                                {t('Редактировать')}
                             </Button>
                         ) : (
                             <>
-                                <Button onClick={onCanselEdit} className={cls.editBtn} theme={ThemeButton.OUTLINE}>
-                                    {t('отменить')}
+                                <Button
+                                    onClick={onCanselEdit}
+                                    className={cls.editBtn}
+                                    theme={ThemeButton.OTLINE_ERROR}
+                                >
+                                    {t('Отменить')}
                                 </Button>
-                                <Button onClick={onSave} className={cls.editBtn} theme={ThemeButton.OUTLINE}>
-                                    {t('сохранить')}
+                                <Button
+                                    onClick={onSave}
+                                    className={cls.editBtn}
+                                    theme={ThemeButton.OUTLINE_SUCCESS}
+                                >
+                                    {t('Сохранить')}
                                 </Button>
                             </>
                         )}

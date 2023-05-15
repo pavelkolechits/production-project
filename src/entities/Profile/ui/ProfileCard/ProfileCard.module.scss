@@ -28,3 +28,10 @@
 .editing {
     border: 1px solid var(--inverted-primary-color);
 }
+
+.country,
+.currency {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

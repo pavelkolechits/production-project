@@ -7,5 +7,9 @@
     "Войти": "Sign in",
     "Выйти": "Sign out",
     "Введите имя пользователя": "Enter username",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Профиль": "Profile",
+    "Статьи": "Articles",
+    "Укажите валюту>": "Currency>",
+    "Укажите страну>": "Country>"
 }

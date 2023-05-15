@@ -41,7 +41,7 @@ export const Select = (props: SelectProps) => {
     return (
         <div className={classNames(cls.Wrapp, {}, [className])}>
             {label
-            && <span className={cls.label}>{label}</span>}
+            && <span className={classNames(cls.label, { [cls.readonly]: readonly }, [])}>{label}</span>}
             <select onChange={onChangeHandler} disabled={readonly} value={value} className={cls.select} name="" id="">
                 {optionList}
             </select>

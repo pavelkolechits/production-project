@@ -38,7 +38,6 @@ export const ArticlleListItem = (props: ArticlleListItemProps) => {
                     <div className={cls.header}>
                         <Avatar alt="/" size={30} src={article?.user?.avatar} />
                         <Text text={article?.user?.username} className={cls.username} />
-                        {console.log(article?.user?.avatar)}
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text title={article.title} className={cls.title} />
