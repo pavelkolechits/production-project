@@ -16,6 +16,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddNewCommentSchema } from 'features/AddNewComment';
 import { ArticlePageSchema } from 'pages/ArticlePage';
+import { ScrollPositionSaveSchema } from 'features/ScrollPositionSave';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -25,7 +26,8 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addNewComment?: AddNewCommentSchema;
-  articlePage?: ArticlePageSchema
+  articlePage?: ArticlePageSchema;
+  scrollPosition: ScrollPositionSaveSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

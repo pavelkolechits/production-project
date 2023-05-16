@@ -8,6 +8,7 @@ import { getDefaultNormalizer } from '@testing-library/react';
 import { $api } from 'shared/api/api';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router-dom';
+import { scrollPositionSaveReducer } from 'features/ScrollPositionSave';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
@@ -19,6 +20,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        scrollPosition: scrollPositionSaveReducer,
 
     };
     const extraArg: ThunkExtraArg = {

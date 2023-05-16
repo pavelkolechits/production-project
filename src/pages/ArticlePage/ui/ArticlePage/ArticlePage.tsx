@@ -41,7 +41,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch(initArticlePage);
+        dispatch(initArticlePage());
     }, [dispatch, inited]);
 
     const onLoadNextPart = useCallback(() => {
