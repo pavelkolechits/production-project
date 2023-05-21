@@ -3,12 +3,12 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { ChangeEvent, useMemo } from 'react';
 import cls from './Select.module.scss';
 
-interface SelectOptions {
+export interface SelectOptions {
     value: string;
     content: string;
 }
 
-interface SelectProps {
+export interface SelectProps {
     className?: string;
     label?: string;
     options?: SelectOptions[];

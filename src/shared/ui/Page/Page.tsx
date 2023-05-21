@@ -6,10 +6,10 @@ import { useInfinityScroll } from 'shared/lib/helpers/hooks/useInfinityScroll/us
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { getScrollPosition, getScrollPositionPath, scrollPositionSaveAction } from 'features/ScrollPositionSave';
 import { useLocation } from 'react-router-dom';
-import cls from './Page.module.scss';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/helpers/hooks/useThrottle/useThrottle';
+import cls from './Page.module.scss';
 
 interface PageProps {
     className?: string;
@@ -24,7 +24,7 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
     useInfinityScroll({ wrapperRef, triggerRef, callback: onScrollEnd });
     const dispatch = useAppDispatch();
     const scrollPosition = useSelector((state: StateSchema) => getScrollPositionPath(state, pathname));
-    const onScrollHandler = useThrottle(() =>(e: UIEvent<HTMLDivElement>) => {
+    const onScrollHandler = useThrottle(() => (e: UIEvent<HTMLDivElement>) => {
         dispatch(
             scrollPositionSaveAction.setScrollPsition(
                 { path: pathname, position: e.currentTarget.scrollTop },
@@ -41,7 +41,7 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
             className={classNames(cls.Page, {}, [className])}
         >
             {children}
-            <div ref={triggerRef} />
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
 };

@@ -11,6 +11,7 @@ import { fetchArticleList } from 'pages/ArticlePage/model/services/fetchArticleL
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { initArticlePage } from 'pages/ArticlePage/model/services/initArticlePage';
+import { useSearchParams } from 'react-router-dom';
 import {
     getArticlePageError,
     getArticlePageHasMore,
@@ -22,6 +23,7 @@ import {
 import cls from './ArticlePage.module.scss';
 import { articlePageAction, articlePageReducer, getArticles } from '../../model/slice/articlePageSlice';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage';
+import { ArticlePageFilter } from '../ArticlePageFilter/ArticlePageFilter';
 
 interface ArticlePageProps {
     className?: string
@@ -36,13 +38,11 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     const isLoading = useSelector(getArticlePageIsLoading);
     const view = useSelector(getArticlePageView);
     const inited = useSelector(getArticlePageInited);
-    const onViewClick = useCallback((view: ArticleView) => {
-        dispatch(articlePageAction.setView(view));
-    }, [dispatch]);
+    const [serchParams] = useSearchParams();
 
     useEffect(() => {
-        dispatch(initArticlePage());
-    }, [dispatch, inited]);
+        dispatch(initArticlePage(serchParams));
+    }, [dispatch, inited, serchParams]);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage());
@@ -51,8 +51,8 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlePage, {}, [className])}>
-                <ArticleViewSelector view={view} onViewClick={onViewClick} />
-                <ArticleList isLoading={isLoading} view={view} articles={articles} />
+                <ArticlePageFilter />
+                <ArticleList className={cls.list} isLoading={isLoading} view={view} articles={articles} />
             </Page>
         </DynamicModuleLoader>
 
