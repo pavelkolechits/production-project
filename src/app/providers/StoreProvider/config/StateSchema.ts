@@ -13,7 +13,7 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions } from 'react-router-dom';
 import { To } from 'history';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecomendationSchema } from 'pages/ArticleDetailsPage';
 import { AddNewCommentSchema } from 'features/AddNewComment';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 import { ScrollPositionSaveSchema } from 'features/ScrollPositionSave';
@@ -28,6 +28,7 @@ export interface StateSchema {
   addNewComment?: AddNewCommentSchema;
   articlePage?: ArticlePageSchema;
   scrollPosition: ScrollPositionSaveSchema;
+  articleDetailsRecomendation?: ArticleDetailsRecomendationSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

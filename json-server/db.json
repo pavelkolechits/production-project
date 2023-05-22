@@ -595,6 +595,12 @@
       "userId": "1",
       "text": "python!!!",
       "id": "p5rMadd"
+    },
+    {
+      "userId": "2",
+      "text": "cjvvtnt",
+      "articleId": "8",
+      "id": "B0pGdcG"
     }
   ],
   "users": [
@@ -634,7 +640,8 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "ulbi tv",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
+      "firstname": "byblik"
     }
   ]
 }
