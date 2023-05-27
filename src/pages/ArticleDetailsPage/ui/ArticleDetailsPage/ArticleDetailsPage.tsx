@@ -34,6 +34,8 @@ import { getArticleRecomendationIsLoading } from 'pages/ArticleDetailsPage/model
 import {
     fetchArticleRecomendation,
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecomendation/fetchArticleRecomendation';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -71,6 +73,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <AppLink to={RoutePath.articles}>{t('go to back')}</AppLink>
                 <ArticleDetails id={id} />
                 <Text title={t('Рекомендации')} />
                 <ArticleList

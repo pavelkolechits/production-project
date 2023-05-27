@@ -17,7 +17,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'pavel-kolechits-plugin'],
     rules: {
         'max-len': ['error', {
             comments: 300,
@@ -52,6 +52,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-plusplus': 'off',
         'arrow-body-style': 'off',
+        'pavel-kolechits-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
