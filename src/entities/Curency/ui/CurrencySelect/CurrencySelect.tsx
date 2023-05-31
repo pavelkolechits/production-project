@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Select } from 'shared/ui/Select/Select';
 import { useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
@@ -23,15 +24,14 @@ export const CurrencySelect = ({
     const onChangeHandler = useCallback((value: string) => {
         onChange?.(value as Currency);
     }, [onChange]);
-
     return (
-        <Select
-            options={options}
-            label={t('Укажите валюту>')}
+        <ListBox
+            readonly={readonly}
+            defaultValue={t('Укажите валюту')}
+            items={options}
             className={classNames('', {}, [className])}
             value={value}
-            onChangeValue={onChangeHandler}
-            readonly={readonly}
+            onChange={onChangeHandler}
         />
     );
 };

@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { Profile } from 'entities/Profile/model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'entities/Curency/model/types/currency';
 import { CurrencySelect } from 'entities/Curency';
 import { Country, CountrySelect } from 'entities/Country';
+import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
