@@ -29,7 +29,7 @@ export const CountrySelect = ({
 
     return (
         <ListBox
-            direction="top"
+            direction="top right"
             items={options}
             defaultValue={t('Укажите валюту')}
             className={classNames('', {}, [className])}

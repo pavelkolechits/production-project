@@ -32,6 +32,7 @@ export const CurrencySelect = ({
             className={classNames('', {}, [className])}
             value={value}
             onChange={onChangeHandler}
+            direction="top right"
         />
     );
 };
