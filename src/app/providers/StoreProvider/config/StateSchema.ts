@@ -17,6 +17,7 @@ import { ArticleDetailsCommentsSchema, ArticleDetailsRecomendationSchema } from 
 import { AddNewCommentSchema } from 'features/AddNewComment';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 import { ScrollPositionSaveSchema } from 'features/ScrollPositionSave';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -28,7 +29,8 @@ export interface StateSchema {
   addNewComment?: AddNewCommentSchema;
   articlePage?: ArticlePageSchema;
   scrollPosition: ScrollPositionSaveSchema;
-  articleDetailsRecomendation?: ArticleDetailsRecomendationSchema
+  articleDetailsRecomendation?: ArticleDetailsRecomendationSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 }
 
 export type StateSchemaKey = keyof StateSchema;

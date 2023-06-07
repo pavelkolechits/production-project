@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-    getArticleDetaisData,
+    getArticleDetailsData,
 } from 'entities/Article/model/selectors/articleDetail';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
@@ -42,7 +42,7 @@ export const ArticleDetails = ({ className, id }: ArticleDetailsProps) => {
         dispatch(fetchArticleById(id));
     }, [dispatch, id]);
 
-    const article = useSelector(getArticleDetaisData);
+    const article = useSelector(getArticleDetailsData);
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const error = useSelector(getArticleDetailsError);
     const renderBlock = useCallback((block: ArticleBlock) => {

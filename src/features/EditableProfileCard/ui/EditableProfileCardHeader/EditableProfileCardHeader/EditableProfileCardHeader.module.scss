@@ -1,0 +1,37 @@
+.ProfileCard {
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.input {
+    margin-top: 10px;
+}
+
+.loading {
+    margin: 300px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    font-style: red;
+}
+
+.avatarWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.editing {
+    border: 1px solid var(--inverted-primary-color);
+}
+
+.country,
+.currency {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

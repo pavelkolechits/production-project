@@ -3,7 +3,7 @@ import { AxiosInstance } from 'axios';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
-import { getArticleDetaisData } from 'entities/Article/model/selectors/articleDetail';
+import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetail';
 import { useDispatch } from 'react-redux';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
@@ -18,7 +18,7 @@ export const addCommentForArticle = createAsyncThunk<
                 extra, rejectWithValue, getState, dispatch,
             } = thunkApi;
             const userData = getUserAuthData(getState());
-            const article = getArticleDetaisData(getState());
+            const article = getArticleDetailsData(getState());
             if (!userData || !text || !article) {
                 return rejectWithValue('no data');
             }

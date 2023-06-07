@@ -9,6 +9,7 @@ import { $api } from 'shared/api/api';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router-dom';
 import { scrollPositionSaveReducer } from 'features/ScrollPositionSave';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
@@ -21,8 +22,10 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scrollPosition: scrollPositionSaveReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
 
     };
+
     const extraArg: ThunkExtraArg = {
         api: $api,
     };
@@ -37,7 +40,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
         // @ts-ignore
     store.reducerManager = reducerManager;
