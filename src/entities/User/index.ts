@@ -6,3 +6,6 @@ import { getUserInited } from './model/selectors/getUserInited';
 export {
     userActions, userReducer, User, UserSchema, getUserAuthData, getUserInited,
 };
+
+export { UserRole } from './model/types/user';
+export { isUserAdmin, isUserManager, getUserRole } from './model/selectors/roleSelectors';

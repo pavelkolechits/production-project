@@ -13,7 +13,7 @@ interface ArticleRecomendationListProps {
 export const ArticleRecomendationList = ({ className }: ArticleRecomendationListProps) => {
     const { t } = useTranslation();
     const { isLoading, data: articles, error } = useArticleRecomendationList(3);
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
     return (
