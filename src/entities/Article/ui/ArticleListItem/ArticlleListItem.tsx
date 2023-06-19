@@ -10,11 +10,12 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import EyeIcon from '../../../../shared/assets/icons/eyeIcon.svg';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 
 interface ArticlleListItemProps {
     className?: string;

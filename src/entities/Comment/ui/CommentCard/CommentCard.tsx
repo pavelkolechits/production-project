@@ -14,7 +14,6 @@ interface CommentCardProps {
 }
 
 export const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
-    console.log(comment);
     if (isLoading) {
         return (
             <div className={classNames(cls.CommentCard, {}, [className])}>

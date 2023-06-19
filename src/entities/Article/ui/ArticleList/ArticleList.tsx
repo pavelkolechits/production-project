@@ -2,10 +2,11 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticlleListItem } from '../ArticleListItem/ArticlleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleListProps {
     className?: string

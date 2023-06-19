@@ -1,22 +1,22 @@
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useSelector } from 'react-redux';
-import {
-    getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
-} from 'pages/ArticlePage/model/selectors/articlePageSelectors';
-import { Select } from 'shared/ui/Select/Select';
-import { articlePageAction } from 'pages/ArticlePage/model/slice/articlePageSlice';
 import { useCallback, useMemo } from 'react';
-import { ArticleView, ArticleViewSelector } from 'entities/Article';
+import {
+    ArticleView, ArticleViewSelector, ArticleType, ArticleSortField,
+} from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/lib/types';
-import { fetchArticleList } from 'pages/ArticlePage/model/services/fetchArticleList';
 import { useDebounce } from 'shared/lib/helpers/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/TabItem/TabItem';
+import { fetchArticleList } from '../../model/services/fetchArticleList';
+import { articlePageAction } from '../../model/slice/articlePageSlice';
+import {
+    getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
+} from '../../model/selectors/articlePageSelectors';
 import cls from './ArticlePageFilter.module.scss';
 
 interface ArticlePageFilterProps {

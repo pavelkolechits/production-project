@@ -4,13 +4,13 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { memo, useCallback, useEffect } from 'react';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/helpers/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';

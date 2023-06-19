@@ -1,8 +1,6 @@
-import { Profile, ProfileSchema } from './model/types/profile';
-
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 
-export {
+export type{
     Profile,
     ProfileSchema,
-};
+} from './model/types/profile';

@@ -6,24 +6,25 @@ import {
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import {
-    getArticleDetailsError,
-    getArticleDetailsIsLoading,
-    getArticleDetailsData,
-} from 'entities/Article/model/selectors/articleDetail';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
+import {
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+    getArticleDetailsData,
+} from '../../model/selectors/articleDetail';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import EyeIcon from '../../../../shared/assets/icons/eyeIcon.svg';
 import DataIcon from '../../../../shared/assets/icons/dataIcon.svg';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType } from '../../model/consts/consts';
 
 interface ArticleDetailsProps {
     className?: string;

@@ -1,4 +1,3 @@
-import { rtkApi } from 'shared/api/rtkApi';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { Text } from 'shared/ui/Text/Text';
