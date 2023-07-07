@@ -16,6 +16,7 @@ import { Popover } from 'shared/ui/Popups';
 import { NotificationList } from 'entities/Natifications';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
