@@ -6,6 +6,7 @@ import { NotificationList } from 'entities/Natifications';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { AnimationProvider } from 'shared/lib/helpers/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 import NotificationIcon from '../../../../shared/assets/icons/notification.svg';
 

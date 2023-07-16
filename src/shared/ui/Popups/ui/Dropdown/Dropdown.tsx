@@ -30,7 +30,7 @@ export const Dropdown = (props: DropdownProps) => {
         <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
             <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, [mapDirectionClass[direction]])}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: {active: boolean}) => (
                         <button
                             disabled={item.disabled}
@@ -43,13 +43,24 @@ export const Dropdown = (props: DropdownProps) => {
                     );
                     if (item.href) {
                         return (
-                            <Menu.Item disabled={item.disabled} to={item.href} as={AppLink}>
+                            <Menu.Item
+                                disabled={item.disabled}
+                                to={item.href}
+                                as={AppLink}
+                                // eslint-disable-next-line react/no-array-index-key
+                                key={`dropdown-item${index}`}
+                            >
                                 {content}
                             </Menu.Item>
                         );
                     }
                     return (
-                        <Menu.Item disabled={item.disabled} as={Fragment}>
+                        <Menu.Item
+                            disabled={item.disabled}
+                            as={Fragment}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={`dropdown-item${index}`}
+                        >
                             {content}
                         </Menu.Item>
                     );
