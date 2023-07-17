@@ -9,38 +9,17 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/helpers/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-    articleDetailsCommentReducer,
-    getArticleDetailsComments,
-} from 'pages/ArticleDetailsPage/model/slice/aticleDetailsCommentSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    getArticleCommentsError,
-    getArticleCommentsIsLoading,
-} from 'pages/ArticleDetailsPage/model/selectors/comments';
-import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
-import {
-    fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { AddNewComment } from 'features/AddNewComment';
-import {
-    addCommentForArticle,
-} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { Page } from 'shared/ui/Page/Page';
-import {
-    articleDetailsPageRecomendationReducers, getArticleRecomendation,
-} from 'pages/ArticleDetailsPage/model/slice/articleDetailsPageRecomendationSlice';
-import { getArticleRecomendationIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recomendation';
-import {
-    fetchArticleRecomendation,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecomendation/fetchArticleRecomendation';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ArticleRecomendationList } from 'features/ArticleRecomendationList';
 import { VStack } from 'shared/ui/Stack/VStack/VStack';
+import { ArticleRating } from 'features/ArticleRating';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { articleDetailsCommentReducer } from '../../model/slice/aticleDetailsCommentSlice';
+import { articleDetailsPageRecomendationReducers } from '../../model/slice/articleDetailsPageRecomendationSlice';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -67,6 +46,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecomendationList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
