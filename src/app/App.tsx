@@ -4,6 +4,8 @@ import { Navbar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserInited, userActions } from 'entities/User';
+import { ToggleFeature } from 'shared/features/ToggleFeature';
+import { MainLayout } from 'shared/layouts';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from '../shared/lib/helpers/classNames/classNames';
 import { AppRouter } from './providers/router';
@@ -17,14 +19,31 @@ export const App = () => {
     }, [dispatch]);
 
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeature
+            name="isAppRedesigned"
+            off={(
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            {inited && <AppRouter />}
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            )}
+            on={(
+                <div className={classNames('app_redesigned', {}, [theme])}>
+
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            sidebar={<Sidebar />}
+                            content={<AppRouter />}
+                        />
+                    </Suspense>
+                </div>
+            )}
+        />
     );
 };

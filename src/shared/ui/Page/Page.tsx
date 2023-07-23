@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/helpers/hooks/useThrottle/useThrottle';
+import { toggleFeature } from 'shared/features';
 import cls from './Page.module.scss';
 
 interface PageProps {
@@ -16,6 +17,7 @@ interface PageProps {
     children: ReactNode;
     onScrollEnd?: () => void;
 }
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = ({ className, children, onScrollEnd }: PageProps) => {
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -35,13 +37,24 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
         );
     }, 500);
     return (
-        <section
-            onScroll={onScrollHandler}
+        <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeature({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
+            onScroll={onScrollHandler}
+            id={PAGE_ID}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-        </section>
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
+        </main>
     );
 };

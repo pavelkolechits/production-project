@@ -647,6 +647,12 @@
       "text": "dggds",
       "articleId": "7",
       "id": "Cci1EOz"
+    },
+    {
+      "userId": "4",
+      "text": ".jhlij",
+      "articleId": "1",
+      "id": "o37-Ipb"
     }
   ],
   "users": [
@@ -659,7 +665,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/22/2207633df03a819cd72889249c8361a8.jpeg?w=1470&r=0.5625"
     },
@@ -698,7 +705,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "avatar": "https://s1.1zoom.ru/big3/992/367659-alexfas01.jpg"
     }
@@ -770,6 +778,31 @@
       "rate": 3,
       "feedback": "",
       "id": "bcPnbbZ"
+    },
+    {
+      "userId": "4",
+      "articleId": "7",
+      "rate": 3,
+      "id": "m-vzWat"
+    },
+    {
+      "userId": "4",
+      "articleId": "1",
+      "rate": 3,
+      "id": "WUu6QzR"
+    },
+    {
+      "userId": "4",
+      "articleId": "11",
+      "rate": 5,
+      "feedback": "hk,hv",
+      "id": "1uTNP6_"
+    },
+    {
+      "userId": "2",
+      "articleId": "18",
+      "rate": 4,
+      "id": "K3NVomt"
     }
   ],
   "profile-ratings": [

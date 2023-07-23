@@ -17,6 +17,7 @@ import { NotificationList } from 'entities/Natifications';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { ToggleFeature } from 'shared/features';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -35,21 +36,38 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }, []);
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
-                <HStack gap="16" className={cls.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-                <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
-            </div>
+            <ToggleFeature
+                name="isAppRedesigned"
+                on={(
+                    <header
+                        className={classNames(cls.NavbarRedesigned, {}, [
+                            className,
+                        ])}
+                    >
+                        {' '}
+                        <HStack gap="16" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                )}
+                off={(
+                    <header className={classNames(cls.Navbar, {}, [className])}>
+                        <HStack gap="16" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                )}
+            />
         );
     }
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ThemeButton.BACKGROUND_INVERTED} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
             {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
-        </div>
+        </header>
     );
 });

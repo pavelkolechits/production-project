@@ -2,21 +2,13 @@
 @import "./variables/global";
 @import "./themes/normal";
 @import "./themes/dark";
-@import "./themes/pink";
+@import "./themes/orange";
 
-// .app {
-//     font-size: var(--font-m);
-//     background: var(--bg-color);
-//     min-height: 100vh;
-//     color: var(--primary-color);
-//     font-family: var(--font-family-main);
-// }
 .app,
 .app_modal,
 .app_drawer {
-    font-size: var(--font-m);
+    font: var(--font-m);
     color: var(--primary-color);
-    font-family: var(--font-family-main);
 }
 
 .app {
@@ -24,6 +16,28 @@
     min-height: 100vh;
 }
 
+.app_redesigned {
+    background: var(--bg-redesigned);
+    min-height: 100vh;
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+}
+
 .content-page {
     display: flex;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;               /* ширина scrollbar */
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);        /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color);    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 2px solid var(--primary-color);  /* padding вокруг плашки */
 }
