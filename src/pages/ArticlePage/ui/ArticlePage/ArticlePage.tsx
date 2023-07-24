@@ -7,11 +7,10 @@ import {
 } from 'shared/lib/helpers/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
-import { fetchArticleList } from 'pages/ArticlePage/model/services/fetchArticleList';
 import { useSelector } from 'react-redux';
-import { Page } from 'shared/ui/Page/Page';
-import { initArticlePage } from 'pages/ArticlePage/model/services/initArticlePage';
+import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
+import { initArticlePage } from '../../model/services/initArticlePage';
 import {
     getArticlePageError,
     getArticlePageHasMore,

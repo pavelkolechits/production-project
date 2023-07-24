@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';

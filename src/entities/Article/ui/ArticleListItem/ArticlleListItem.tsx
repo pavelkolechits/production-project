@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Card } from 'shared/ui/Card/Card';
+import { Text } from 'shared/ui/deprecated/Text/Text';
+import { Icon } from 'shared/ui/deprecated/Icon/Icon';
+import { Card } from 'shared/ui/deprecated/Card/Card';
 import { useHover } from 'shared/lib/helpers/hooks/useHover/useHover';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Avatar } from 'shared/ui/deprecated/Avatar/Avatar';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';

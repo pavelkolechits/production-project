@@ -1,12 +1,12 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { memo, useMemo, useState } from 'react';
-import { ThemeSwither } from 'shared/ui/ThemeSwitcher';
-import { LanguageSwitcher } from 'shared/ui/LanguageSwither';
-import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
+import { ThemeSwither } from 'shared/ui/deprecated/ThemeSwitcher';
+import { LanguageSwitcher } from 'shared/ui/deprecated/LanguageSwither';
+import { Button, SizeButton, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/deprecated/Stack/VStack/VStack';
 import { ToggleFeature } from 'shared/features';
-import { AppLogo } from 'shared/ui/AppLogo/AppLogo';
+import { AppLogo } from 'shared/ui/redesigned/AppLogo/AppLogo';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';

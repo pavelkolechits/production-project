@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
+import { Icon } from 'shared/ui/deprecated/Icon/Icon';
 import cls from './ArticleViewSelector.module.scss';
 import ListIcon from '../../../../shared/assets/icons/articleListIcon.svg';
 import TiledIcon from '../../../../shared/assets/icons/articleTempIcon.svg';

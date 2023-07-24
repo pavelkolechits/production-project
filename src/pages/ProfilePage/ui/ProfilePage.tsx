@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { EditableProfileCard } from 'features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 
 interface ProfilePageProps {

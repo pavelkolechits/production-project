@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui/Text/Text';
+import { Card, CardTheme } from 'shared/ui/deprecated/Card/Card';
+import { Text } from 'shared/ui/deprecated/Text/Text';
 import { Notification } from '../../model/types/notification';
 import cls from './NotificationItem.module.scss';
 

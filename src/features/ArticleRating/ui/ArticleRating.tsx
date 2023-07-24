@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { RatingCard } from 'entities/Rating';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Skeleton } from 'shared/ui/deprecated/Skeleton/Skeleton';
 import { useCallback } from 'react';
 import cls from './ArticleRating.module.scss';
 import { useGetArticleRating, useRateArticle } from '../model/api/articleRatingApi';

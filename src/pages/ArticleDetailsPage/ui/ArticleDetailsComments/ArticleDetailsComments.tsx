@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/deprecated/Text/Text';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';

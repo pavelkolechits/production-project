@@ -6,10 +6,10 @@ import {
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Skeleton } from 'shared/ui/deprecated/Skeleton/Skeleton';
+import { Text, TextAlign, TextSize } from 'shared/ui/deprecated/Text/Text';
+import { Avatar } from 'shared/ui/deprecated/Avatar/Avatar';
+import { Icon } from 'shared/ui/deprecated/Icon/Icon';
 import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,

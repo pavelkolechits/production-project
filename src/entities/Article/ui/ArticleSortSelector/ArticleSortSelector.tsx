@@ -1,4 +1,4 @@
-import { Select, SelectOptions } from 'shared/ui/Select/Select';
+import { Select, SelectOptions } from 'shared/ui/deprecated/Select/Select';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useCallback, useMemo } from 'react';

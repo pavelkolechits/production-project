@@ -1,7 +1,7 @@
 import { FeatureFlags } from 'shared/types/featureFlags';
 
 let featureFlags: FeatureFlags = {
-    isCounterEnabled: true,
+    isAppRedesigned: true,
 };
 
 export function setFeatureFlags(newFeatureFlags?:FeatureFlags) {

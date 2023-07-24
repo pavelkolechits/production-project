@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { profileActions } from '../../../model/slice/profileSlice';
 import { updateProfileData } from '../../../model/service/updateProfileDate/updateProfileData';
 import { getProfileData } from '../../../model/selectors/getProfileData/getProfileData';

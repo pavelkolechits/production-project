@@ -6,12 +6,12 @@ import {
     ArticleView, ArticleViewSelector, ArticleType, ArticleSortField,
 } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
+import { Card } from 'shared/ui/deprecated/Card/Card';
+import { Input } from 'shared/ui/deprecated/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/lib/types';
 import { useDebounce } from 'shared/lib/helpers/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/TabItem/TabItem';
+import { TabItem, Tabs } from 'shared/ui/deprecated/TabItem/TabItem';
 import { fetchArticleList } from '../../model/services/fetchArticleList';
 import { articlePageAction } from '../../model/slice/articlePageSlice';
 import {

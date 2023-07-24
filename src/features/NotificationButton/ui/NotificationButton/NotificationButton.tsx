@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Popover } from 'shared/ui/Popups';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Popover } from 'shared/ui/deprecated/Popups';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
+import { Icon } from 'shared/ui/deprecated/Icon/Icon';
 import { NotificationList } from 'entities/Natifications';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { Drawer } from 'shared/ui/deprecated/Drawer/Drawer';
 import { useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { AnimationProvider } from 'shared/lib/helpers/components/AnimationProvider';

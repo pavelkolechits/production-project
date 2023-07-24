@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
+import { Input } from 'shared/ui/deprecated/Input/Input';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { memo, useCallback, useEffect } from 'react';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';

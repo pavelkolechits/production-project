@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Input } from 'shared/ui/Input/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Input } from 'shared/ui/deprecated/Input/Input';
+import { Loader } from 'shared/ui/deprecated/Loader/Loader';
+import { Avatar } from 'shared/ui/deprecated/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Curency';
 import { Country, CountrySelect } from 'entities/Country';
 import { Profile } from '../../model/types/profile';

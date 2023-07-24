@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { useCallback, useEffect } from 'react';
 import { ArticleList } from 'entities/Article';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { getArticles } from '../../model/slice/articlePageSlice';
 import {
