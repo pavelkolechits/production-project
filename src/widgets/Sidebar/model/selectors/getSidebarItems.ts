@@ -3,10 +3,10 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { getUserAuthData } from 'entities/User';
 import React from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/mainIcon.svg';
-import AboutIcon from 'shared/assets/icons/aboutIcon.svg';
-import ProfileIcon from 'shared/assets/icons/profileIcon.svg';
-import ArticlesIcon from 'shared/assets/icons/articlesIcon.svg';
+import MainIcon from 'shared/assets/icons/Home.svg';
+import AboutIcon from 'shared/assets/icons/Info.svg';
+import ProfileIcon from 'shared/assets/icons/Avatar.svg';
+import ArticlesIcon from 'shared/assets/icons/articles.svg';
 import { SidebarItemType } from '../types/sidebar';
 
 export const getSidebarItems = createSelector(

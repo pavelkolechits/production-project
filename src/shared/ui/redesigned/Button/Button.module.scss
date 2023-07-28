@@ -1,0 +1,84 @@
+.Button {
+    cursor: pointer;
+    color: var(--text-redesigned);
+    padding: 7px 15px;
+    font-family: var(--font-family-main);
+    &:hover {
+        color: var(--accent-redesigned);
+    }
+}
+
+.clear {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+}
+
+.outline {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    background: none;
+}
+
+.background {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: none;
+}
+
+.backgroundInverted {
+    background-color: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
+    border: none;
+}
+
+.square {
+    padding: 0;
+}
+
+.square.m {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+    font: var(--font-m);
+}
+
+.square.l {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+    font: var(--font-l);
+}
+
+.square.xl {
+    width: var(--font-line-xl);
+    height: var(--font-line-xl);
+    font: var(--font-xl);
+}
+
+.m {
+    font: var(--font-m-redesigned);
+}
+
+.l {
+    font: var(--font-l-redesigned);
+}
+
+.xl {
+    font: var(--font-xl-redesigned);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.outline_success {
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+    background: none;
+}
+
+.outline_error {
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    background: none;
+}
