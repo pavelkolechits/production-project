@@ -1,13 +1,13 @@
 import { Card } from 'shared/ui/deprecated/Card/Card';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { VStack } from 'shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/deprecated/Text/Text';
 import { StarRating } from 'shared/ui/deprecated/StarRating/StarRating';
 import { useCallback, useState } from 'react';
 import { Modal } from 'shared/ui/deprecated/Modal';
 import { Input } from 'shared/ui/deprecated/Input/Input';
-import { HStack } from 'shared/ui/deprecated/Stack/HStack/HStack';
+import { HStack } from 'shared/ui/redesigned/Stack/HStack/HStack';
 import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 // import cls from './RatingCard.module.scss';
 

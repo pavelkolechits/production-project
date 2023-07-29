@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { VStack } from 'shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { Text } from 'shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ArticleList } from 'entities/Article';

@@ -3,7 +3,7 @@ import { Avatar } from 'shared/ui/deprecated/Avatar/Avatar';
 import { Text } from 'shared/ui/deprecated/Text/Text';
 import { Skeleton } from 'shared/ui/deprecated/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/deprecated/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { getRouteProfile } from 'shared/consts/router';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
@@ -25,9 +25,12 @@ export const CommentCard = ({ className, comment, isLoading }: CommentCardProps)
             </div>
         );
     }
+    if (!comment) {
+        return null;
+    }
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink to={`${RoutePath.profile}${comment?.user.id}`} className={cls.header}>
+            <AppLink to={getRouteProfile(comment?.user.id)} className={cls.header}>
                 {comment?.user.avatar
                     ? (
                         <Avatar

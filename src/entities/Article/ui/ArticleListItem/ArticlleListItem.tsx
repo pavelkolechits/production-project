@@ -8,7 +8,7 @@ import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { getRouteArticleDetails } from 'shared/consts/router';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
@@ -28,7 +28,7 @@ export const ArticlleListItem = (props: ArticlleListItemProps) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id);
+        navigate(getRouteArticleDetails(article.id));
     }, [article.id, navigate]);
     if (view === ArticleView.BIG) {
         // eslint-disable-next-line prefer-const

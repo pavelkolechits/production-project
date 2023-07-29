@@ -10,9 +10,8 @@ import {
     ReducerList,
 } from 'shared/lib/helpers/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from 'widgets/Page/Page';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ArticleRecomendationList } from 'features/ArticleRecomendationList';
-import { VStack } from 'shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { ArticleRating } from 'features/ArticleRating';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';

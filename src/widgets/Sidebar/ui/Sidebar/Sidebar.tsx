@@ -4,16 +4,16 @@ import { ThemeSwither as ThemeSwitcherDeprecated } from 'shared/ui/deprecated/Th
 import { LanguageSwitcher as LanguageSwitcherDeprecated } from 'shared/ui/deprecated/LanguageSwither';
 import { Button, SizeButton, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { ToggleFeature } from 'shared/features';
 import { AppLogo } from 'shared/ui/redesigned/AppLogo/AppLogo';
 import { Icon } from 'shared/ui/redesigned/Icon/Icon';
 import ArrowIcon from 'shared/assets/icons/Union.svg';
 import { ThemeSwither } from 'features/ThemeSwitcher';
+import { LanguageSwitcher } from 'features/LanguageSwither';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { LanguageSwitcher } from 'features/LanguageSwither';
 
 interface SidebarProps {
     className?: string;
