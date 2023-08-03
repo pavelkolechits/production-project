@@ -1,13 +1,28 @@
 .Button {
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+    fill: var(--text-redesigned);
 
     &:hover {
         color: var(--accent-redesigned);
+
+        .addonLeft svg, .addonRight svg {
+            fill: var(--accent-redesigned);
+        }
     }
 }
 
+
+.addonLeft, .addonRight {
+    display: flex;
+    margin: 5px;
+}
+
+.addonRight svg, .addonLeft svg {
+    fill: var(--hint-redesigned);
+}
 .clear {
     padding: 0;
     border: none;

@@ -35,11 +35,9 @@ export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
         <ToggleFeature
             name="isAppRedesigned"
             on={(
-                <Card className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])}>
+                <Card border="24" className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])}>
                     {viewTypes.map((viewType) => (
                         <Icon
-                            width={16}
-                            height={16}
                             onClick={onClick(viewType.view)}
                             clickable
                             Svg={viewType.icon}

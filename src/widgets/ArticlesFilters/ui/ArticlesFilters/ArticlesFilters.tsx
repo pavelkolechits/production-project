@@ -6,8 +6,10 @@ import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs/ArticleTypeTabs';
 import { ArticleSortField, ArticleType } from 'entities/Article';
 import { SortOrder } from 'shared/lib/types';
-import { Input } from 'shared/ui/deprecated/Input/Input';
 import { useTranslation } from 'react-i18next';
+import { Input } from 'shared/ui/redesigned/Input/Input';
+import { Icon } from 'shared/ui/redesigned/Icon/Icon';
+import searchIcon from '../../../../shared/assets/icons/searchIcon.svg';
 import cls from './ArticlesFilters.module.scss';
 
 interface ArticlesFiltersProps {
@@ -30,7 +32,12 @@ export const ArticlesFilters = (props: ArticlesFiltersProps) => {
     return (
         <Card className={classNames(cls.ArticlesFilters, {}, [className])}>
             <VStack gap="32">
-                <Input onChange={onChangeSearch} value={search} placeholder={t('Поиск')} />
+                <Input
+                    addonLeft={<Icon width={15} height={15} Svg={searchIcon} />}
+                    onChange={onChangeSearch}
+                    value={search}
+                    placeholder={t('Поиск')}
+                />
                 <ArticleTypeTabs
                     className={cls.tabs}
                     onChangeType={onChangeType}
