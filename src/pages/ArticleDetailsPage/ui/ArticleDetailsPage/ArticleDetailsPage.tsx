@@ -38,6 +38,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             </Page>
         );
     }
+
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>

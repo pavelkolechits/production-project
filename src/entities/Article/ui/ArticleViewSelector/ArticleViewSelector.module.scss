@@ -1,7 +1,18 @@
-.notSelected {
-    fill: var(--secondary-color);
+.ArticleViewSelector {
+    .notSelected {
+        fill: var(--secondary-color);
+    }
 }
 
-.btn {
-    margin-right: 10px;
+.ArticleViewSelectorRedesigned {
+    display: flex;
+    gap: 8px;
+
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
+}
+
+.icon {
+    fill: var(--icon-redesigned);
 }

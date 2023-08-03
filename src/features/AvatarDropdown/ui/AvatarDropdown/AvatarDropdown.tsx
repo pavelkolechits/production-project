@@ -4,7 +4,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
-import { Dropdown as DropdownDeprecated} from 'shared/ui/deprecated/Popups';
+import { Dropdown as DropdownDeprecated } from 'shared/ui/deprecated/Popups';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Avatar as AvatarDeprecated } from 'shared/ui/deprecated/Avatar/Avatar';

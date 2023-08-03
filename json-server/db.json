@@ -653,6 +653,12 @@
       "text": ".jhlij",
       "articleId": "1",
       "id": "o37-Ipb"
+    },
+    {
+      "userId": "1",
+      "text": "xbdg ",
+      "articleId": "1",
+      "id": "QlfScic"
     }
   ],
   "users": [
@@ -803,6 +809,13 @@
       "articleId": "18",
       "rate": 4,
       "id": "K3NVomt"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 3,
+      "feedback": "",
+      "id": "YwsJgcw"
     }
   ],
   "profile-ratings": [

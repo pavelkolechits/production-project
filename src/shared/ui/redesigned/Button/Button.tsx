@@ -1,51 +1,68 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import {
     ButtonHTMLAttributes, memo, ReactNode,
 } from 'react';
 import cls from './Button.module.scss';
 
-type ButtonVariant = 'clear' | 'outline'
-
-export enum ThemeButton {
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
-  OUTLINE_SUCCESS = 'outline_success',
-  OTLINE_ERROR = 'outline_error'
-}
-
-type ButtonSize = 'm' | 'l' | 'xl'
-
-export enum SizeButton {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl'
-  }
+export type ButtonVariant = 'clear' | 'outline' | 'filled';
+export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  variant?: ButtonVariant;
-  square?: boolean;
-  size?: ButtonSize;
-  disabled?: boolean;
-  children?: ReactNode
+    className?: string;
+    /**
+     * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
+     */
+    variant?: ButtonVariant;
+    /**
+     * Флаг, делающий кнопку квадратной
+     */
+    square?: boolean;
+    /**
+     * Размер кнопки в соответствии с дизайн системой
+     */
+    size?: ButtonSize;
+    /**
+     * Флаг, отвечающий за работу кнопки
+     */
+    disabled?: boolean;
+    /**
+     * Содержимое кнопки
+     */
+    children?: ReactNode;
+    /**
+     * Увеличивает кнопку на всю свободную ширину
+     */
+    fullWidth?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
     const {
-        className, variant = 'outline', children, square, size = 'm', disabled, ...otherProps
+        className,
+        children,
+        variant = 'outline',
+        square,
+        disabled,
+        fullWidth,
+        size = 'm',
+        ...otherProps
     } = props;
+
+    const mods: Mods = {
+        [cls.square]: square,
+        [cls.disabled]: disabled,
+        [cls.fullWidth]: fullWidth,
+    };
+
     return (
         <button
             type="button"
-            {...otherProps}
+            className={classNames(cls.Button, mods, [
+                className,
+                cls[variant],
+                cls[size],
+            ])}
             disabled={disabled}
-            className={
-                classNames(
-                    cls.Button,
-                    { [cls.square]: square, [cls.disabled]: disabled },
-                    [className, cls[variant], cls[size]],
-                )
-            }
+            {...otherProps}
         >
             {children}
         </button>
