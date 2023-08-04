@@ -6,7 +6,7 @@ interface AvatarProps {
     className?: string;
     size?: number;
     src?: string;
-    alt: string
+    alt?: string
 }
 /**
  * Устарел, используем новый компанент из папки redesigned

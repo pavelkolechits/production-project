@@ -37,6 +37,7 @@ export const ArticlesFilters = (props: ArticlesFiltersProps) => {
                     onChange={onChangeSearch}
                     value={search}
                     placeholder={t('Поиск')}
+                    size="s"
                 />
                 <ArticleTypeTabs
                     className={cls.tabs}

@@ -9,11 +9,6 @@ interface SkeletonProps {
     borderRadius?: string;
 }
 
-/**
- * Устарел, используем новый компанент из папки redesigned
- * @deprecated
- */
-
 export const Skeleton = (props: SkeletonProps) => {
     const {
         className, height, width, borderRadius,
