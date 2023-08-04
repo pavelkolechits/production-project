@@ -29,7 +29,7 @@ const mapBorderToClass: Record<CardBorder, string> = {
     40: 'border_40',
 };
 
-export const Card = memo((props: CardProps) => {
+export const Card = (props: CardProps) => {
     const {
         className,
         children,
@@ -56,4 +56,4 @@ export const Card = memo((props: CardProps) => {
             {children}
         </div>
     );
-});
+};

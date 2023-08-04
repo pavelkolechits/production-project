@@ -6,9 +6,10 @@ import { useHover } from 'shared/lib/helpers/hooks/useHover/useHover';
 import { Avatar } from 'shared/ui/deprecated/Avatar/Avatar';
 import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRouteArticleDetails } from 'shared/consts/router';
+import { ToggleFeature } from 'shared/features';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
@@ -16,58 +17,22 @@ import cls from './ArticleListItem.module.scss';
 import EyeIcon from '../../../../shared/assets/icons/eyeIcon.svg';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import { ArticleListItemDeprecated } from './ArticleListItemDeprecated/ArticleListItemDeprecated';
+import { ArticleListItemRedesigned } from './ArticleListItemRedesigned/ArticleListItemRedesigned';
 
-interface ArticlleListItemProps {
+export interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticlleListItem = (props: ArticlleListItemProps) => {
-    const { article, view, className } = props;
-    const { t } = useTranslation();
-    const navigate = useNavigate();
-    const onOpenArticle = useCallback(() => {
-        navigate(getRouteArticleDetails(article.id));
-    }, [article.id, navigate]);
-    if (view === ArticleView.BIG) {
-        // eslint-disable-next-line prefer-const
-        let textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
-        return (
-            <div className={classNames(cls.ArticlleListItem, {}, [className, cls[view]])}>
-                <Card className={cls.card}>
-                    <div className={cls.header}>
-                        <Avatar alt="/" size={30} src={article?.user?.avatar} />
-                        <Text text={article?.user?.username} className={cls.username} />
-                        <Text text={article.createdAt} className={cls.date} />
-                    </div>
-                    <Text title={article.title} className={cls.title} />
-                    <Text className={cls.types} text={article.type.join(',')} />
-                    <img src={article.img} className={cls.img} alt={article.title} />
-                    {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
-                    <div className={cls.footer}>
-                        <Button onClick={onOpenArticle} theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
-                        <Text text={String(article.views)} className={cls.views} />
-                        <Icon Svg={EyeIcon} />
-                    </div>
-                </Card>
-            </div>
-        );
-    }
+export const ArticlleListItem = (props: ArticleListItemProps) => {
     return (
-        <div className={classNames(cls.ArticlleListItem, {}, [className, cls[view]])}>
-            <Card onClick={onOpenArticle} className={cls.card}>
-                <div className={cls.imageWrapper}>
-                    <img className={cls.img} src={article.img} alt={article.title} />
-                    <Text text={article.createdAt} className={cls.date} />
-                </div>
-                <div className={cls.infoWrapper}>
-                    <Text className={cls.types} text={article.type.join(',')} />
-                    <Text text={String(article.views)} className={cls.views} />
-                    <Icon Svg={EyeIcon} />
-                </div>
-                <Text text={article.title} className={cls.title} />
-            </Card>
-        </div>
+        <ToggleFeature
+            name="isAppRedesigned"
+            on={<ArticleListItemRedesigned {...props} />}
+            off={<ArticleListItemDeprecated {...props} />}
+        />
     );
 };
