@@ -56,6 +56,7 @@ module.exports = {
                 'theme',
                 'variant',
                 'size',
+                'wrap',
             ],
         }],
         'jsx-a11y/click-events-have-key-events': 'off',
