@@ -30,6 +30,18 @@
     max-width: 60%;
 }
 
+.ModalNew {
+    .content {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.ModalOld {
+    .content {
+        background: var(--bg-color);
+    }
+}
+
 .opened {
     pointer-events: auto;
     opacity: 1;

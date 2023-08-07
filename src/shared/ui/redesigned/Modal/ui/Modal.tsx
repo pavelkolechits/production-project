@@ -4,9 +4,10 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { toggleFeature } from 'shared/features';
 import cls from './Modal.module.scss';
-import { Portal } from '../../../redesigned/Portal/Portal';
-import { Overlay } from '../../../redesigned/Overlay/Overlay';
+import { Portal } from '../../Portal/Portal';
+import { Overlay } from '../../Overlay/Overlay';
 
 interface ModalProps {
     className?: string;
@@ -16,11 +17,6 @@ interface ModalProps {
     lazy?: boolean;
 }
 const ANIMATION_DELAY = 200;
-
-/**
- * Устарел, используем новый компанент из папки redesigned
- * @deprecated
- */
 
 export const Modal = (props: ModalProps) => {
     const {
@@ -75,10 +71,15 @@ export const Modal = (props: ModalProps) => {
     if (lazy && !isMounted) {
         return null;
     }
+    const mainClass = toggleFeature({
+        name: 'isAppRedesigned',
+        on: () => cls.ModalNew,
+        off: () => cls.ModalOld,
+    });
 
     return (
-        <Portal>
-            <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
+        <Portal element={document.getElementById('app') ?? document.body}>
+            <div className={classNames(cls.Modal, mods, [className, theme, 'app', mainClass])}>
                 <Overlay className={cls.overlay} onClick={onCloseHandler} />
                 <div className={cls.content}>
                     {children}

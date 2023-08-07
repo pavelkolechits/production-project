@@ -3,7 +3,7 @@ import { Popover as PopoverDeprecated } from 'shared/ui/deprecated/Popups';
 import { Button as ButtonDeprecated, ThemeButton } from 'shared/ui/deprecated/Button/Button';
 import { Icon as IconDeprecated } from 'shared/ui/deprecated/Icon/Icon';
 import { NotificationList } from 'entities/Natifications';
-import { Drawer } from 'shared/ui/deprecated/Drawer/Drawer';
+import { Drawer } from 'shared/ui/redesigned/Drawer/Drawer';
 import { useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { AnimationProvider } from 'shared/lib/helpers/components/AnimationProvider';

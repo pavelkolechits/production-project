@@ -14,7 +14,7 @@ import { Popover } from 'shared/ui/deprecated/Popups';
 import { NotificationList } from 'entities/Natifications';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
-import { Drawer } from 'shared/ui/deprecated/Drawer/Drawer';
+import { Drawer } from 'shared/ui/redesigned/Drawer/Drawer';
 import { ToggleFeature } from 'shared/features';
 import cls from './Navbar.module.scss';
 

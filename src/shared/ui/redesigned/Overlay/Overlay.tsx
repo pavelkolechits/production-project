@@ -6,11 +6,6 @@ interface OverlayProps {
     onClick?: () => void;
 }
 
-/**
- * Устарел, используем новый компанент из папки redesigned
- * @deprecated
- */
-
 export const Overlay = (props: OverlayProps) => {
     const { className, onClick } = props;
     return (

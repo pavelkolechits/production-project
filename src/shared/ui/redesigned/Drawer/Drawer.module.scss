@@ -30,3 +30,15 @@
     touch-action: none;
     padding: 15px;
 }
+
+.DrawerNew {
+    .sheet {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.DrawerOld {
+    .sheet {
+        background: var(--bg-color);
+    }
+}

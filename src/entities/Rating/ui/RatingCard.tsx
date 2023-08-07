@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/deprecated/Text/Text';
 import { StarRating } from 'shared/ui/deprecated/StarRating/StarRating';
 import { useCallback, useState } from 'react';
-import { Modal } from 'shared/ui/deprecated/Modal';
+import { Modal } from 'shared/ui/redesigned/Modal';
 import { Input } from 'shared/ui/deprecated/Input/Input';
 import { HStack } from 'shared/ui/redesigned/Stack/HStack/HStack';
 import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
