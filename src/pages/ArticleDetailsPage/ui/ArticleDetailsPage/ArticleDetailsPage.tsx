@@ -13,11 +13,15 @@ import { Page } from 'widgets/Page/Page';
 import { ArticleRecomendationList } from 'features/ArticleRecomendationList';
 import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { ArticleRating } from 'features/ArticleRating';
+import { ToggleFeature } from 'shared/features';
+import { StickyContentLayout } from 'shared/layouts';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsCommentReducer } from '../../model/slice/aticleDetailsCommentSlice';
 import { articleDetailsPageRecomendationReducers } from '../../model/slice/articleDetailsPageRecomendationSlice';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -40,17 +44,39 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <VStack gap="16">
-                    <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
-                    <ArticleRecomendationList />
-                    <ArticleDetailsComments id={id} />
-                </VStack>
-            </Page>
-        </DynamicModuleLoader>
+        <ToggleFeature
+            name="isAppRedesigned"
+            on={(
+                <StickyContentLayout
+                    right={<AdditionalInfoContainer />}
+                    content={(
+                        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                            <VStack gap="16">
+                                <ArticleDetailsPageHeader />
+                                <DetailsContainer />
+                                <ArticleRating articleId={id} />
+                                <ArticleRecomendationList />
+                                <ArticleDetailsComments id={id} />
+                            </VStack>
+                        </Page>
+                    )}
+                />
+            )}
+            off={(
+                <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+                    <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                        <VStack gap="16">
+                            <ArticleDetailsPageHeader />
+                            <ArticleDetails id={id} />
+                            <ArticleRating articleId={id} />
+                            <ArticleRecomendationList />
+                            <ArticleDetailsComments id={id} />
+                        </VStack>
+                    </Page>
+                </DynamicModuleLoader>
+            )}
+        />
+
     );
 };
 export default memo(ArticleDetailsPage);
