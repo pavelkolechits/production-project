@@ -50,6 +50,27 @@
     }
 }
 
+.outline-error {
+    background: none;
+    border: 1px solid var(--cancel-redesigned);
+    padding: 8px 16px;
+    border-radius: 34px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.outline-success {
+    background: none;
+    border: 1px solid var(--save-redesigned);
+    padding: 8px 16px;
+    border-radius: 34px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 .square {
     padding: 0;
 }

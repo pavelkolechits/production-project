@@ -29,7 +29,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
 export const ArticleList = (props: ArticleListProps) => {
     const { t } = useTranslation();
     const {
-        className, articles, isLoading, view = ArticleView.BIG, target,
+        className, articles, isLoading, view = ArticleView.SMALL, target,
     } = props;
 
     return (

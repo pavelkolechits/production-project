@@ -3,7 +3,12 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
-import { Button, ThemeButton } from 'shared/ui/deprecated/Button/Button';
+import { Button as ButtonDeprecated, ThemeButton } from 'shared/ui/deprecated/Button/Button';
+import { ToggleFeature } from 'shared/features';
+import { Button } from 'shared/ui/redesigned/Button/Button';
+import { Text } from 'shared/ui/redesigned/Text';
+import { Card } from 'shared/ui/redesigned/Card/Card';
+import { HStack } from 'shared/ui/redesigned/Stack/HStack/HStack';
 import { profileActions } from '../../../model/slice/profileSlice';
 import { updateProfileData } from '../../../model/service/updateProfileDate/updateProfileData';
 import { getProfileData } from '../../../model/selectors/getProfileData/getProfileData';
@@ -35,39 +40,84 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
     }, [dispatch]);
 
     return (
-        <div className={cls.ProfilePageHeader}>
-            <p>{t('Профиль')}</p>
-            {canEdit
-                && (
-                    <div className={cls.btnsWrap}>
-                        {readonly ? (
+        <ToggleFeature
+            name="isAppRedesigned"
+            on={(
+                <Card className={cls.ProfilePageHeader}>
+                    <HStack>
+                        <Text text={t('Профиль')} />
+                        {canEdit
+            && (
+                <div className={cls.btnsWrap}>
+                    {readonly ? (
+                        <Button
+                            onClick={onEdit}
+                            className={cls.editBtn}
+                            variant="outline"
+                        >
+                            {t('Редактировать')}
+                        </Button>
+                    ) : (
+                        <>
                             <Button
-                                onClick={onEdit}
+                                onClick={onCanselEdit}
                                 className={cls.editBtn}
-                                theme={ThemeButton.OUTLINE}
+                                variant="ouline-error"
                             >
-                                {t('Редактировать')}
+                                {t('Отменить')}
                             </Button>
-                        ) : (
-                            <>
-                                <Button
-                                    onClick={onCanselEdit}
-                                    className={cls.editBtn}
-                                    theme={ThemeButton.OTLINE_ERROR}
-                                >
-                                    {t('Отменить')}
-                                </Button>
-                                <Button
-                                    onClick={onSave}
-                                    className={cls.editBtn}
-                                    theme={ThemeButton.OUTLINE_SUCCESS}
-                                >
-                                    {t('Сохранить')}
-                                </Button>
-                            </>
-                        )}
-                    </div>
-                )}
-        </div>
+                            <Button
+                                onClick={onSave}
+                                className={cls.editBtn}
+                                variant="outline-success"
+                            >
+                                {t('Сохранить')}
+                            </Button>
+                        </>
+                    )}
+                </div>
+            )}
+                    </HStack>
+
+                </Card>
+            )}
+            off={(
+                <div className={cls.ProfilePageHeader}>
+                    <p>{t('Профиль')}</p>
+                    {canEdit
+            && (
+                <div className={cls.btnsWrap}>
+                    {readonly ? (
+                        <ButtonDeprecated
+                            onClick={onEdit}
+                            className={cls.editBtn}
+                            theme={ThemeButton.OUTLINE}
+                        >
+                            {t('Редактировать')}
+                        </ButtonDeprecated>
+                    ) : (
+                        <>
+                            <ButtonDeprecated
+                                onClick={onCanselEdit}
+                                className={cls.editBtn}
+                                theme={ThemeButton.OTLINE_ERROR}
+                            >
+                                {t('Отменить')}
+                            </ButtonDeprecated>
+                            <ButtonDeprecated
+                                onClick={onSave}
+                                className={cls.editBtn}
+                                theme={ThemeButton.OUTLINE_SUCCESS}
+                            >
+                                {t('Сохранить')}
+                            </ButtonDeprecated>
+                        </>
+                    )}
+                </div>
+            )}
+                </div>
+            )}
+        />
+
     );
 };

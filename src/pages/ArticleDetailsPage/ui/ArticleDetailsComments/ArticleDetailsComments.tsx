@@ -2,10 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
-import { Text } from 'shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated, TextSize } from 'shared/ui/deprecated/Text/Text';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/helpers/hooks/useAppDispatch/useAppDispatch';
-import { useCallback, useEffect } from 'react';
+import { Suspense, useCallback, useEffect } from 'react';
+import { ToggleFeature } from 'shared/features';
+import { Loader } from 'shared/ui/deprecated/Loader/Loader';
+import { Text } from 'shared/ui/redesigned/Text';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { getArticleDetailsComments } from '../../model/slice/aticleDetailsCommentSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -16,22 +20,42 @@ interface ArticleDetailsCommentsProps {
     id: string;
 }
 
-export const ArticleDetailsComments = ({ className, id }: ArticleDetailsCommentsProps) => {
+export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
+    const { className, id } = props;
+    const comments = useSelector(getArticleDetailsComments.selectAll);
+    console.log(comments, '1');
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
     useEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     }, [dispatch, id]);
-    const { t } = useTranslation();
-    const comments = useSelector(getArticleDetailsComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
+    console.log(comments, '2');
     return (
-        <div className={classNames('', {}, [className])}>
-            <Text title={t('Комментарий')} />
-            <AddNewComment onSendComment={onSendComment} />
-            <CommentList isLoading={commentsIsLoading} comments={comments} />
-        </div>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
+            <ToggleFeature
+                name="isAppRedesigned"
+                on={<Text size="l" title={t('Комментарии')} />}
+                off={(
+                    <TextDeprecated
+                        size={TextSize.L}
+                        title={t('Комментарии')}
+                    />
+                )}
+            />
+            <Suspense fallback={<Loader />}>
+                <AddNewComment onSendComment={onSendComment} />
+            </Suspense>
+            <CommentList
+                isLoading={commentsIsLoading}
+                comments={comments}
+            />
+        </VStack>
     );
 };

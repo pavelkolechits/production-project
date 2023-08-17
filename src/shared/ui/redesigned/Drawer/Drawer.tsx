@@ -12,6 +12,7 @@ interface DrawerProps {
     children: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
@@ -19,7 +20,7 @@ const height = window.innerHeight - 100;
 const DrawerContent = (props: DrawerProps) => {
     const { Gesture, Spring } = useAnimationLibs();
     const {
-        className, children, isOpen, onClose,
+        className, children, isOpen, onClose, lazy,
     } = props;
     const { theme } = useTheme();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));

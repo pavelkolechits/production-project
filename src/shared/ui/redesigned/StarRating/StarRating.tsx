@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useState } from 'react';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../../deprecated/Icon/Icon';
 import cls from './StarRating.module.scss';
 import starIcon from '../../../assets/icons/starIcon.svg';
 
@@ -12,11 +12,6 @@ interface StarRatingProps {
 }
 
 const stars = [1, 2, 3, 4, 5];
-
-/**
- * Устарел, используем новый компанент из папки redesigned
- * @deprecated
- */
 
 export const StarRating = (props: StarRatingProps) => {
     const {

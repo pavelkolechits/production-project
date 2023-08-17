@@ -6,7 +6,7 @@ import cls from './Button.module.scss';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
-export type ButtonVariant = 'clear' | 'outline' | 'filled';
+export type ButtonVariant = 'clear' | 'outline' | 'filled' | 'outline-success' | 'ouline-error';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;

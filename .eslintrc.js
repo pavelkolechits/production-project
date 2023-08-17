@@ -57,6 +57,7 @@ module.exports = {
                 'variant',
                 'size',
                 'wrap',
+                'target',
             ],
         }],
         'jsx-a11y/click-events-have-key-events': 'off',

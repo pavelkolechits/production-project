@@ -50,15 +50,17 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <StickyContentLayout
                     right={<AdditionalInfoContainer />}
                     content={(
-                        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                            <VStack gap="16">
-                                <ArticleDetailsPageHeader />
-                                <DetailsContainer />
-                                <ArticleRating articleId={id} />
-                                <ArticleRecomendationList />
-                                <ArticleDetailsComments id={id} />
-                            </VStack>
-                        </Page>
+                        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+                            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                                <VStack gap="16">
+                                    <ArticleDetailsPageHeader />
+                                    <DetailsContainer />
+                                    <ArticleRating articleId={id} />
+                                    <ArticleRecomendationList />
+                                    <ArticleDetailsComments id={id} />
+                                </VStack>
+                            </Page>
+                        </DynamicModuleLoader>
                     )}
                 />
             )}
