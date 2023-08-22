@@ -27,7 +27,7 @@ export const CommentList = (props: CommentListProps) => {
         );
     }
     return (
-        <VStack max className={classNames(cls.CommentList, {}, [className])}>
+        <VStack gap="8" max className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length ? comments.map(((comment) => (
                 <CommentCard
                     isLoading={isLoading}

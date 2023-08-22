@@ -11,6 +11,7 @@ import { AppLink } from 'shared/ui/redesigned/AppLink/AppLink';
 import { Text } from 'shared/ui/redesigned/Text';
 import { Avatar } from 'shared/ui/redesigned/Avatar/Avatar';
 import { Card } from 'shared/ui/redesigned/Card/Card';
+import { HStack } from 'shared/ui/redesigned/Stack/HStack/HStack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
@@ -58,20 +59,20 @@ export const CommentCard = ({ className, comment, isLoading }: CommentCardProps)
         <ToggleFeature
             name="isAppRedesigned"
             on={(
-                <Card className={cls.card} padding="16" border="16">
-                    <VStack wrap="wrap" gap="8" className={classNames(cls.CommentCardRedesigned, {}, [className])}>
-                        <AppLink to={getRouteProfile(comment?.user.id)} className={cls.header}>
-                            {comment?.user.avatar
-                                ? (
+                <Card max padding="16" border="16">
+                    <VStack max gap="8">
+                        <AppLink to={getRouteProfile(comment?.user.id)}>
+                            <HStack gap="8">
+                                {comment.user.avatar ? (
                                     <Avatar
-                                        src={comment?.user.avatar}
                                         size={30}
+                                        src={comment.user.avatar}
                                     />
-                                )
-                                : null }
-                            <Text className={cls.username} text={comment?.user.username} />
+                                ) : null}
+                                <Text text={comment.user.username} bold />
+                            </HStack>
                         </AppLink>
-                        <Text className={cls.text} text={comment?.text} bold />
+                        <Text text={comment?.text} />
                     </VStack>
                 </Card>
 

@@ -704,9 +704,33 @@
     },
     {
       "userId": "1",
-      "text": "grrrrtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "text": "новркаа",
+      "articleId": "8",
+      "id": "JLA12gt"
+    },
+    {
+      "userId": "1",
+      "text": "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
       "articleId": "7",
-      "id": "tWXgGLU"
+      "id": "8svuQIE"
+    },
+    {
+      "userId": "1",
+      "text": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+      "articleId": "2",
+      "id": "W0ko2wJ"
+    },
+    {
+      "userId": "1",
+      "text": "jjkguiuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+      "articleId": "2",
+      "id": "it2fqGR"
+    },
+    {
+      "userId": "1",
+      "text": "123455",
+      "articleId": "2",
+      "id": "GqehMn9"
     }
   ],
   "users": [
@@ -771,8 +795,8 @@
       "first": "jghwer",
       "lastname": "asfewr",
       "age": 465,
-      "currency": "RUB",
-      "country": "Belarus",
+      "currency": "EUR",
+      "country": "Ukraine",
       "city": "Moscow",
       "username": "admin213",
       "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200",
@@ -793,98 +817,17 @@
   ],
   "article-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
       "userId": "1",
       "articleId": "3",
       "rate": 3,
-      "feedback": "",
-      "id": "I7ofk1u"
-    },
-    {
-      "userId": "1",
-      "articleId": "9",
-      "rate": 5,
-      "feedback": "asdasdasdasd",
-      "id": "Y7MhPzo"
-    },
-    {
-      "userId": "1",
-      "articleId": "10",
-      "rate": 1,
-      "feedback": "отстой",
-      "id": "II0a75O"
+      "id": 1
     },
     {
       "userId": "1",
       "articleId": "7",
       "rate": 3,
-      "feedback": "",
-      "id": "bcPnbbZ"
-    },
-    {
-      "userId": "4",
-      "articleId": "7",
-      "rate": 3,
-      "id": "m-vzWat"
-    },
-    {
-      "userId": "4",
-      "articleId": "1",
-      "rate": 3,
-      "id": "WUu6QzR"
-    },
-    {
-      "userId": "4",
-      "articleId": "11",
-      "rate": 5,
-      "feedback": "hk,hv",
-      "id": "1uTNP6_"
-    },
-    {
-      "userId": "2",
-      "articleId": "18",
-      "rate": 4,
-      "id": "K3NVomt"
-    },
-    {
-      "userId": "1",
-      "articleId": "8",
-      "rate": 3,
-      "feedback": "",
-      "id": "YwsJgcw"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 3,
-      "feedback": "",
-      "id": "PuTTcB4"
-    },
-    {
-      "userId": "1",
-      "articleId": "12",
-      "rate": 3,
-      "id": "p3hYchX"
-    },
-    {
-      "userId": "1",
-      "articleId": "16",
-      "rate": 3,
-      "feedback": "ererref",
-      "id": "RWhNW63"
+      "feedback": "dt",
+      "id": 2
     }
   ],
   "profile-ratings": [

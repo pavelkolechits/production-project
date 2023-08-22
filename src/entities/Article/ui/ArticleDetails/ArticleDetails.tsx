@@ -119,10 +119,21 @@ export const ArticleDetails = ({ className, id }: ArticleDetailsProps) => {
         content = <ArticleDetailsSkeleton />;
     } else if (error) {
         content = (
-            <Text
-                align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке статьи.')}
+            <ToggleFeature
+                name="isAppRedesigned"
+                on={(
+                    <Text
+                        title={t('Произошла ошибка при загрузке статьи.')}
+                    />
+                )}
+                off={(
+                    <TextDeprecated
+                        align={TextAlign.CENTER}
+                        title={t('Произошла ошибка при загрузке статьи.')}
+                    />
+                )}
             />
+
         );
     } else {
         content = (

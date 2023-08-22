@@ -19,7 +19,7 @@ export const ArticleAdditionalInfo = (props: ArticleAdditionalInfoProps) => {
     const {
         className, createdAt, author, views,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
     console.log(author);
     return (
         <VStack gap="32" className={classNames(cls.ArticleAdditionalInfo, {}, [className])}>

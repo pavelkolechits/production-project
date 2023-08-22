@@ -43,9 +43,9 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
         <ToggleFeature
             name="isAppRedesigned"
             on={(
-                <Card className={cls.ProfilePageHeader}>
-                    <HStack>
-                        <Text text={t('Профиль')} />
+                <Card max className={cls.ProfilePageHeader}>
+                    <HStack justify="between">
+                        <Text title={t('Профиль')} />
                         {canEdit
             && (
                 <div className={cls.btnsWrap}>
@@ -58,11 +58,11 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
                             {t('Редактировать')}
                         </Button>
                     ) : (
-                        <>
+                        <HStack gap="8">
                             <Button
                                 onClick={onCanselEdit}
                                 className={cls.editBtn}
-                                variant="ouline-error"
+                                variant="outline-error"
                             >
                                 {t('Отменить')}
                             </Button>
@@ -73,7 +73,7 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
                             >
                                 {t('Сохранить')}
                             </Button>
-                        </>
+                        </HStack>
                     )}
                 </div>
             )}

@@ -23,8 +23,17 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const { pathname } = useLocation();
-    useInfiniteScroll({ wrapperRef, triggerRef, callback: onScrollEnd });
     const dispatch = useAppDispatch();
+    useInfiniteScroll({
+        triggerRef,
+        // @ts-ignore
+        wrapperRef: toggleFeature({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
+        callback: onScrollEnd,
+    });
     const scrollPosition = useSelector((state: StateSchema) => getScrollPositionPath(state, pathname));
     useEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;

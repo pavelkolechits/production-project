@@ -16,13 +16,13 @@ import { ArticleBlockType, ArticleView } from '../../../model/consts/consts';
 import { ArticleTextBlock } from '../../../model/types/article';
 import cls from './ArticleListItemRedesigned.module.scss';
 import { ArticleListItemProps } from '../ArticlleListItem';
-import EyeIcon from '../../../../../shared/assets/icons/eyeIcon.svg';
+import EyeIcon from '../../../../../shared/assets/icons/eye.svg';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const {
         className, article, view, target,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const userInfo = (

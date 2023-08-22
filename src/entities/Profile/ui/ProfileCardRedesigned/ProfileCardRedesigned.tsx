@@ -10,6 +10,7 @@ import { Input } from 'shared/ui/redesigned/Input/Input';
 import { CurrencySelect } from 'entities/Curency';
 import { CountrySelect } from 'entities/Country';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+import cls from '../ProfileCard/ProfileCard.module.scss';
 
 export const ProfileCardRedesignedError = () => {
     const { t } = useTranslation();
@@ -76,21 +77,19 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Avatar size={128} src={data?.avatar} />
                     </HStack>
                 )}
-                <HStack gap="32" max>
+                <HStack gap="16" max>
                     <VStack gap="16" max>
                         <Input
                             value={data?.firstname}
                             label={t('Имя')}
                             onChange={onChangeFirstname}
                             readonly={readonly}
-                            data-testid="ProfileCard.firstname"
                         />
                         <Input
                             value={data?.lastname}
                             label={t('Фамилия')}
                             onChange={onChangeLastname}
                             readonly={readonly}
-                            data-testid="ProfileCard.lastname"
                         />
                         <Input
                             value={data?.age}
@@ -105,7 +104,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                             readonly={readonly}
                         />
                     </VStack>
-                    <VStack gap="16" max>
+                    <VStack max gap="16">
                         <Input
                             value={data?.username}
                             label={t('Имя пользователя')}

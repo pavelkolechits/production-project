@@ -12,7 +12,6 @@ interface ArticleImageBlockComponentProps {
 }
 
 export const ArticleImageBlockComponent = ({ className, block }: ArticleImageBlockComponentProps) => {
-    const { t } = useTranslation();
     return (
         <div
             className={classNames(cls.ArticleImageBlockComponent, {}, [

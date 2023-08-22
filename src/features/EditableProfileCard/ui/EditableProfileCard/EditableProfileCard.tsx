@@ -13,6 +13,7 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/helpers/components/DynamicModuleLoader/DynamicModuleLoader';
+import { VStack } from 'shared/ui/redesigned/Stack/VStack/VStack';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
@@ -33,7 +34,6 @@ const reducers: ReducerList = {
 };
 
 export const EditableProfileCard = ({ className, id }: EditableProfileCardProps) => {
-    const { t } = useTranslation();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
@@ -85,20 +85,23 @@ export const EditableProfileCard = ({ className, id }: EditableProfileCardProps)
     );
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <EditableProfileCardHeader />
-            <ProfileCard
-                className={className}
-                data={formData}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                readonly={readonly}
-                onChangeLastname={onChangeLastname}
-                onChangeFirstname={onChangeFirstname}
-                isLoading={isLoading}
-                error={error}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            <VStack gap="8">
+                <EditableProfileCardHeader />
+                <ProfileCard
+                    className={className}
+                    data={formData}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    readonly={readonly}
+                    onChangeLastname={onChangeLastname}
+                    onChangeFirstname={onChangeFirstname}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                />
+            </VStack>
+
         </DynamicModuleLoader>
 
     );

@@ -44,7 +44,7 @@ const AddNewComment = (props: AddNewCommentProps) => {
             <ToggleFeature
                 name="isAppRedesigned"
                 on={(
-                    <Card border="16">
+                    <Card max border="16">
                         <HStack gap="16" justify="between" max>
                             <Input
                                 className={cls.input}

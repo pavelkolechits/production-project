@@ -95,7 +95,7 @@ export const Input = memo((props: InputProps) => {
 
     if (label) {
         return (
-            <HStack gap="8">
+            <HStack max gap="8">
                 <Text text={label} />
                 {input}
             </HStack>

@@ -38,6 +38,7 @@ export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
                 <Card border="24" className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])}>
                     {viewTypes.map((viewType) => (
                         <Icon
+                            key={viewType.view}
                             onClick={onClick(viewType.view)}
                             clickable
                             Svg={viewType.icon}
@@ -51,6 +52,7 @@ export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
                 <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
                     {viewTypes.map((viewType) => (
                         <ButtonDeprecated
+                            key={viewType.view}
                             className={cls.btn}
                             onClick={onClick(viewType.view)}
                             theme={ThemeButton.CLEAR}

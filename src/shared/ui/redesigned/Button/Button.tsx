@@ -1,12 +1,12 @@
 import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import {
-    ButtonHTMLAttributes, memo, ReactNode,
+    ButtonHTMLAttributes, ForwardedRef, forwardRef, memo, ReactNode,
 } from 'react';
 import cls from './Button.module.scss';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
-export type ButtonVariant = 'clear' | 'outline' | 'filled' | 'outline-success' | 'ouline-error';
+export type ButtonVariant = 'clear' | 'outline' | 'filled' | 'outline-success' | 'outline-error';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -39,7 +39,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     addonRight?: ReactNode;
 }
 
-export const Button = memo((props: ButtonProps) => {
+export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const {
         className,
         children,
@@ -62,6 +62,7 @@ export const Button = memo((props: ButtonProps) => {
 
     return (
         <button
+            ref={ref}
             type="button"
             className={classNames(cls.Button, mods, [
                 className,

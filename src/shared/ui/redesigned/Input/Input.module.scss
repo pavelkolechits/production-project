@@ -44,9 +44,9 @@
 .input {
     border: none;
     outline: none;
-    width: 100%;
     color: var(--text-redesigned);
     background: none;
+    width: 100%;
 
     &::placeholder {
         color: var(--hint-redesigned);
