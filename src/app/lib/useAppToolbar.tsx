@@ -7,7 +7,6 @@ export function useAppToolbar() {
     const appRoute = useRouteChange();
 
     // eslint-disable-next-line no-undef
-    
     const toolbarByAppRoute: OptionalRecord<AppRoutes, ReactElement> = {
         [AppRoutes.ARTICLES]: <ScrollToolbar />,
         [AppRoutes.ARTICLE_DETAILS]: <ScrollToolbar />,
